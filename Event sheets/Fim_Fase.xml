@@ -1,0 +1,92 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>Fim_Fase</name>
+    <events>
+        <event-block sid="1169298972860327">
+            <conditions>
+                <condition id="6" name="On object clicked" sid="5871178212902763" type="Mouse">
+                    <param id="0" name="Mouse button">0</param>
+                    <param id="1" name="Click type">0</param>
+                    <param id="2" name="Object clicked">Volta_Fim_Fase</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-2" name="Go to layout" sid="837788290467493" type="System">
+                    <param id="0" name="Layout">EScolha_fase</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="470709798183671">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="647381634755074" type="System" />
+            </conditions>
+            <actions>
+                <action id="0" name="Play" sid="937112558627478" type="Audio">
+                    <param id="0" name="Audio file">fimfase</param>
+                    <param id="2" name="Loop">0</param>
+                    <param id="3" name="Volume">0</param>
+                    <param id="1" name="Tag (optional)">&quot;fimfase&quot;</param>
+                </action>
+                <action id="-16" name="Wait" sid="773958441068129" type="System">
+                    <param id="0" name="Seconds">2.0</param>
+                </action>
+                <action id="0" name="Set text" sid="276030528346878" type="SF_Display">
+                    <param id="0" name="Text">&quot;&quot;</param>
+                </action>
+                <action id="-10" name="Set value" sid="425596909002822" type="SF_Display">
+                    <param id="0" name="Instance variable">TextoParaMostrar</param>
+                    <param id="1" name="Value">&quot;PARABéNS !!!!! VOCê ACABOU COM O MOSQUITO... VAMOS PARA A PRóXIMA FASE.... &quot;</param>
+                </action>
+                <action id="-13" name="Set boolean" sid="480337322594698" type="SF_Display">
+                    <param id="0" name="Instance variable">Show</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="748316741571203">
+            <conditions>
+                <condition id="-1" name="Every tick" sid="848578780475168" type="System" />
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="501030705646832">
+                    <conditions>
+                        <condition id="-8" name="Is boolean instance variable set" sid="833239941702661" type="SF_Display">
+                            <param id="0" name="Instance variable">Show</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Set text" sid="621435160097395" type="SF_Display">
+                            <param id="0" name="Text">left(SF_Display.TextoParaMostrar, len(SF_Display.Text) +1)</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="376709594806538">
+                    <conditions>
+                        <condition id="0" name="Compare text" sid="143730404284763" type="SF_Display">
+                            <param id="0" name="Text to compare">SF_Display.TextoParaMostrar</param>
+                            <param id="1" name="Case sensitivity">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-13" name="Set boolean" sid="962742246367659" type="SF_Display">
+                            <param id="0" name="Instance variable">Show</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="469875822378573">
+            <conditions>
+                <condition id="-1" name="Every tick" sid="570385328987447" type="System" />
+            </conditions>
+            <actions>
+                <action id="0" name="Set text" sid="857794394155404" type="Pontuacao">
+                    <param id="0" name="Text">PONTOS</param>
+                </action>
+            </actions>
+        </event-block>
+    </events>
+</c2eventsheet>

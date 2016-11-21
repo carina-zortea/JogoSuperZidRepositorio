@@ -1,0 +1,139 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>Escolha_fase</name>
+    <events>
+        <variable constant="0" name="CurrentLevel" sid="8014532581706064" static="0" type="number">0</variable>
+        <event-block sid="8326494406168486">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="9721570368030708" type="System" />
+            </conditions>
+            <actions>
+                <action id="0" name="Play" sid="137581694773978" type="Audio">
+                    <param id="0" name="Audio file">escolha_fase</param>
+                    <param id="2" name="Loop">0</param>
+                    <param id="3" name="Volume">0</param>
+                    <param id="1" name="Tag (optional)">&quot;escolha fase&quot;</param>
+                </action>
+                <action id="2" name="Set at X" sid="7867363242373628" type="Array">
+                    <param id="0" name="X">0</param>
+                    <param id="1" name="Value">&quot;PP_Fase&quot;</param>
+                </action>
+                <action id="2" name="Set at X" sid="6676233354727785" type="Array">
+                    <param id="0" name="X">1</param>
+                    <param id="1" name="Value">&quot;Segunda_Fase&quot;</param>
+                </action>
+                <action id="2" name="Set at X" sid="5479435358873787" type="Array">
+                    <param id="0" name="X">2</param>
+                    <param id="1" name="Value">&quot;PTTerceira_Fase&quot;</param>
+                </action>
+            </actions>
+            <sub-events>
+                <event-block sid="291755950330496">
+                    <conditions>
+                        <condition id="0" name="Compare at X" sid="805520204589159" type="level">
+                            <param id="0" name="X">CurrentLevel</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="2" name="Set at X" sid="7812966495883372" type="level">
+                            <param id="0" name="X">CurrentLevel</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="7935383085588433">
+                    <conditions>
+                        <condition id="-11" name="For Each" sid="2268635359091163" type="System">
+                            <param id="0" name="Object">Sprite81</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="399315600436694">
+                            <conditions>
+                                <condition id="0" name="Compare at X" sid="7068480335470023" type="level">
+                                    <param id="0" name="X">Sprite81.Level_1</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">0</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="5" name="Set frame" sid="5863591483123436" type="Sprite81">
+                                    <param id="0" name="Frame number">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="4311867473298229">
+                            <conditions>
+                                <condition id="0" name="Compare at X" sid="9453269554557912" type="level">
+                                    <param id="0" name="X">Sprite81.Level_1</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">1</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="5" name="Set frame" sid="9673573011186908" type="Sprite81">
+                                    <param id="0" name="Frame number">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="866172241004649">
+                            <conditions>
+                                <condition id="0" name="Compare at X" sid="5657655765876631" type="level">
+                                    <param id="0" name="X">Sprite81.Level_1</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">2</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="5" name="Set frame" sid="1238060332114203" type="Sprite81">
+                                    <param id="0" name="Frame number">2</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="4988725017354137">
+            <conditions>
+                <condition id="6" name="On object clicked" sid="7155727512887616" type="Mouse">
+                    <param id="0" name="Mouse button">0</param>
+                    <param id="1" name="Click type">0</param>
+                    <param id="2" name="Object clicked">Sprite81</param>
+                </condition>
+                <condition id="0" name="Compare at X" sid="7691691991658132" type="level">
+                    <param id="0" name="X">Sprite81.Level_1</param>
+                    <param id="1" name="Comparison">4</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-25" name="Go to layout (by name)" sid="206998056833149" type="System">
+                    <param id="0" name="Layout"> Array.At(CurrentLevel)</param>
+                </action>
+                <action id="-9" name="Set value" sid="5747096801916326" type="System">
+                    <param id="0" name="Variable">CurrentLevel</param>
+                    <param id="1" name="Value">Sprite81.Level_1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="451814202807814">
+            <conditions>
+                <condition id="6" name="On object clicked" sid="936527136185923" type="Mouse">
+                    <param id="0" name="Mouse button">0</param>
+                    <param id="1" name="Click type">0</param>
+                    <param id="2" name="Object clicked">VoltaMenu</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-2" name="Go to layout" sid="182054713632325" type="System">
+                    <param id="0" name="Layout">Inicio_Jogo</param>
+                </action>
+            </actions>
+        </event-block>
+    </events>
+</c2eventsheet>

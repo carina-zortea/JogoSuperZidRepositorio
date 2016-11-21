@@ -1,0 +1,108 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>TTerceira_Fase</name>
+    <events>
+        <event-block sid="933844037549430">
+            <conditions>
+                <condition id="3" name="On touched object" sid="270273786980119" type="Touch">
+                    <param id="0" name="Object">Vai_texto</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="0" name="Set text" sid="230045233853443" type="SF_Display">
+                    <param id="0" name="Text">&quot;&quot;</param>
+                </action>
+                <action id="-10" name="Set value" sid="541968314940633" type="SF_Display">
+                    <param id="0" name="Instance variable">TextoParaMostrar</param>
+                    <param id="1" name="Value">&quot;AGORA VAMOS ELIMINAR OS FOCOS QUE ESTãO NO CAMPO. PRECISAMOS ENCONTRA-LOS E ELIMINA-LOS, MAS PARA ISSO PRECISO DA AJUDA DE VOCêS. VAMOS PARA O JOGO !! &quot;</param>
+                </action>
+                <action id="-13" name="Set boolean" sid="793566140300144" type="SF_Display">
+                    <param id="0" name="Instance variable">Show</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+                <action id="0" name="Play" sid="137743532369368" type="Audio">
+                    <param id="0" name="Audio file">2textofase3</param>
+                    <param id="2" name="Loop">0</param>
+                    <param id="3" name="Volume">0</param>
+                    <param id="1" name="Tag (optional)">&quot;2textofase3&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="994529209029850">
+            <conditions>
+                <condition id="-1" name="Every tick" sid="838422939935444" type="System" />
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="448242795492505">
+                    <conditions>
+                        <condition id="-8" name="Is boolean instance variable set" sid="970792420565841" type="SF_Display">
+                            <param id="0" name="Instance variable">Show</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Set text" sid="614000735462759" type="SF_Display">
+                            <param id="0" name="Text">left(SF_Display.TextoParaMostrar, len(SF_Display.Text) +1)</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="385581248198930">
+                    <conditions>
+                        <condition id="0" name="Compare text" sid="535645398469588" type="SF_Display">
+                            <param id="0" name="Text to compare">SF_Display.TextoParaMostrar</param>
+                            <param id="1" name="Case sensitivity">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-13" name="Set boolean" sid="800431748526634" type="SF_Display">
+                            <param id="0" name="Instance variable">Show</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="291816321930916">
+            <conditions>
+                <condition id="6" name="On object clicked" sid="360782432019115" type="Mouse">
+                    <param id="0" name="Mouse button">0</param>
+                    <param id="1" name="Click type">0</param>
+                    <param id="2" name="Object clicked">ok_texto2</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-2" name="Go to layout" sid="170193271224571" type="System">
+                    <param id="0" name="Layout">PTTerceira_Fase</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="295356852521568">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="480017965467416" type="System" />
+            </conditions>
+            <actions>
+                <action id="0" name="Play" sid="219773428112904" type="Audio">
+                    <param id="0" name="Audio file">1TEXTOFASE3</param>
+                    <param id="2" name="Loop">0</param>
+                    <param id="3" name="Volume">0</param>
+                    <param id="1" name="Tag (optional)">&quot;1TEXTOFASE3&quot;</param>
+                </action>
+                <action id="-16" name="Wait" sid="510639251116236" type="System">
+                    <param id="0" name="Seconds">2.0</param>
+                </action>
+                <action id="0" name="Set text" sid="378829540079579" type="SF_Display">
+                    <param id="0" name="Text">&quot;&quot;</param>
+                </action>
+                <action id="-10" name="Set value" sid="676314360395496" type="SF_Display">
+                    <param id="0" name="Instance variable">TextoParaMostrar</param>
+                    <param id="1" name="Value">&quot;NO CAMPO é MAIS DIFíCIL DE CONTROLAR OS FOCOS, POR ISSO PRECISAMOS SER MAIS ATENTOS E OLHAR EM TODOS OS LUGARES...&quot;</param>
+                </action>
+                <action id="-13" name="Set boolean" sid="157788348244192" type="SF_Display">
+                    <param id="0" name="Instance variable">Show</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+            </actions>
+        </event-block>
+    </events>
+</c2eventsheet>

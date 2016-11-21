@@ -1,0 +1,132 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>Inicio_jogo</name>
+    <events>
+        <event-block sid="1447554789286542">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="473576910826218" type="System" />
+            </conditions>
+            <actions>
+                <action id="0" name="Play" sid="704935750643106" type="Audio">
+                    <param id="0" name="Audio file">GIncicio</param>
+                    <param id="2" name="Loop">0</param>
+                    <param id="3" name="Volume">0</param>
+                    <param id="1" name="Tag (optional)">&quot;Inicio&quot;</param>
+                </action>
+                <action id="0" name="Play" sid="290895023174474" type="Audio">
+                    <param id="0" name="Audio file">som abertura jogo</param>
+                    <param id="2" name="Loop">1</param>
+                    <param id="3" name="Volume">-5</param>
+                    <param id="1" name="Tag (optional)">&quot;abertura&quot;</param>
+                </action>
+                <action id="-16" name="Wait" sid="968786212679010" type="System">
+                    <param id="0" name="Seconds">3</param>
+                </action>
+                <action id="0" name="Play" sid="453167965252550" type="Audio">
+                    <param id="0" name="Audio file">GApertePlayer</param>
+                    <param id="2" name="Loop">0</param>
+                    <param id="3" name="Volume">0</param>
+                    <param id="1" name="Tag (optional)">&quot;player&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="533228507187136">
+            <conditions>
+                <condition id="3" name="On touched object" sid="937611517199624" type="Touch">
+                    <param id="0" name="Object">Sprite149</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="187869297807972">
+                    <conditions>
+                        <condition id="3" name="Compare frame" sid="981230135103154" type="Sprite149">
+                            <param id="0" name="Comparison">0</param>
+                            <param id="1" name="Number">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="2" name="Set muted" sid="940359033864920" type="Audio">
+                            <param id="0" name="Tag">&quot;abertura&quot;</param>
+                            <param id="1" name="State">0</param>
+                        </action>
+                        <action id="5" name="Set frame" sid="799840656987727" type="Sprite149">
+                            <param id="0" name="Frame number">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="548413705376622">
+                    <conditions>
+                        <condition id="-22" name="Else" sid="529406525805644" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="2" name="Set muted" sid="201833588546259" type="Audio">
+                            <param id="0" name="Tag">&quot;abertura&quot;</param>
+                            <param id="1" name="State">1</param>
+                        </action>
+                        <action id="5" name="Set frame" sid="337625572718540" type="Sprite149">
+                            <param id="0" name="Frame number">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="2035939259347054">
+            <conditions />
+            <actions />
+        </event-block>
+        <event-block sid="8805977484423189">
+            <conditions />
+            <actions />
+        </event-block>
+        <event-block sid="9303421270368992">
+            <conditions />
+            <actions />
+        </event-block>
+        <event-block sid="7487560264783358">
+            <conditions />
+            <actions />
+        </event-block>
+        <event-block sid="3387566205804808">
+            <conditions />
+            <actions />
+        </event-block>
+        <event-block sid="1530403620724917">
+            <conditions>
+                <condition id="6" name="On object clicked" sid="5946108020666596" type="Mouse">
+                    <param id="0" name="Mouse button">0</param>
+                    <param id="1" name="Click type">0</param>
+                    <param id="2" name="Object clicked">Sprite37</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-2" name="Go to layout" sid="4636314203934437" type="System">
+                    <param id="0" name="Layout">EScolha_fase</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="8610656355430777">
+            <conditions>
+                <condition id="6" name="On object clicked" sid="7122685846876891" type="Mouse">
+                    <param id="0" name="Mouse button">0</param>
+                    <param id="1" name="Click type">0</param>
+                    <param id="2" name="Object clicked">Vida_1</param>
+                </condition>
+            </conditions>
+            <actions />
+        </event-block>
+        <event-block sid="8433851895902392">
+            <conditions />
+            <actions />
+        </event-block>
+        <event-block sid="2837250533421089">
+            <conditions />
+            <actions />
+        </event-block>
+        <event-block sid="3605210221851149">
+            <conditions />
+            <actions />
+        </event-block>
+    </events>
+</c2eventsheet>

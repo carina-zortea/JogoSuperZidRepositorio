@@ -1,0 +1,614 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>Primeira_Fase</name>
+    <events>
+        <variable constant="0" name="Vida_mosquitos" sid="1880725813372677" static="0" type="number">2</variable>
+        <variable comment="Poder para atirar" constant="0" name="Poder" sid="5561696254212051" static="0" type="number">0</variable>
+        <variable comment="Vida" constant="0" name="Vida" sid="5564714457875233" static="0" type="number">3</variable>
+        <variable comment="Pontos" constant="0" name="PONTOS" sid="2174203033908288" static="0" type="number">0</variable>
+        <event-block sid="5947254486531832">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="249130905684187" type="System" />
+            </conditions>
+            <actions>
+                <action id="-16" name="Set opacity" sid="791113417971076" type="Personagem">
+                    <param id="0" name="Opacity">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="8331892075923156">
+            <conditions />
+            <actions />
+        </event-block>
+        <event-block sid="9920634563110257">
+            <conditions />
+            <actions />
+        </event-block>
+        <event-block sid="41680224940472">
+            <conditions>
+                <condition id="-1" name="Every tick" sid="4328939713738716" type="System" />
+            </conditions>
+            <actions>
+                <action id="-4" name="Set position to another object" sid="1778178505881825" type="Zid">
+                    <param id="0" name="Object">Personagem</param>
+                    <param id="1" name="Image point (optional)">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="1002333685812261">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="8801408349114773" type="Personagem">
+                    <param id="0" name="Object">Moeda</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Destroy" sid="5911448749296806" type="Moeda" />
+                <action id="-10" name="Add to" sid="2060421962579707" type="System">
+                    <param id="0" name="Variable">PONTOS</param>
+                    <param id="1" name="Value">10</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="835607321306312">
+            <conditions>
+                <condition id="-1" name="Every tick" sid="6500684926716945" type="System" />
+            </conditions>
+            <actions>
+                <action id="0" name="Set text" sid="2655262204198096" type="Pontuacao">
+                    <param id="0" name="Text">PONTOS</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="7850281110032014">
+            <conditions>
+                <condition id="-1" name="Every tick" sid="287636358069676" type="System" />
+            </conditions>
+            <actions>
+                <action id="0" name="Set text" sid="488261095093637" type="PVidas">
+                    <param id="0" name="Text">Vida</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="1484885613314063">
+            <conditions />
+            <actions />
+        </event-block>
+        <event-block sid="6117566063354788">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="2282885679761094" type="Personagem">
+                    <param id="0" name="Object">Mosquitos_2</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="11" name="Set collisions enabled" sid="3412049412097996" type="Personagem">
+                    <param id="0" name="Collisions">1</param>
+                </action>
+                <action id="-11" name="Subtract from" sid="6957320661754519" type="System">
+                    <param id="0" name="Variable">Vida</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="4867431453755231">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="6669106910127865" type="Personagem">
+                    <param id="0" name="Object">Vida_jogo</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Destroy" sid="7021226049445874" type="Vida_jogo" />
+                <action id="-10" name="Add to" sid="6845996043853658" type="System">
+                    <param id="0" name="Variable">Vida</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="4148614086376237">
+            <conditions>
+                <condition id="3" name="On touched object" sid="9571377483745959" type="Touch">
+                    <param id="0" name="Object">Voltar_1</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-26" name="Restart layout" sid="8888236872542219" type="System" />
+            </actions>
+        </event-block>
+        <event-block sid="6554169221848053">
+            <conditions>
+                <condition id="6" name="On object clicked" sid="1818824074296411" type="Mouse">
+                    <param id="0" name="Mouse button">0</param>
+                    <param id="1" name="Click type">0</param>
+                    <param id="2" name="Object clicked">VoltaMenu</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-2" name="Go to layout" sid="1060179182397112" type="System">
+                    <param id="0" name="Layout">Inicio_Jogo</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="924272182364882">
+            <conditions>
+                <condition id="2" name="Key is down" sid="8389370915005604" type="Keyboard">
+                    <param id="0" name="Key">32 (Space)</param>
+                </condition>
+                <condition id="-6" name="Every X seconds" sid="6801620536493638" type="System">
+                    <param id="0" name="Interval (seconds)">0.3</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-3" name="Create object" sid="223603871408436" type="System">
+                    <param id="0" name="Object to create">Poder</param>
+                    <param id="1" name="Layer">2</param>
+                    <param id="2" name="X">Personagem.X</param>
+                    <param id="3" name="Y">Personagem.Y</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="1196779446129321">
+            <conditions />
+            <actions />
+        </event-block>
+        <event-block sid="837808424742299">
+            <conditions>
+                <condition id="-14" name="Compare variable" sid="3305389319866625" type="System">
+                    <param id="0" name="Variable">Vida_mosquitos</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-11" name="Subtract from" sid="3773713043061694" type="System">
+                    <param id="0" name="Variable">Vida_mosquitos</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+                <action id="-16" name="Wait" sid="9652197395587022" type="System">
+                    <param id="0" name="Seconds">1</param>
+                </action>
+                <action id="3" name="Start" sid="828372399873321" type="esplode">
+                    <param id="0" name="From">1</param>
+                </action>
+                <action id="-9" name="Destroy" sid="1105224550596461" type="esplode" />
+            </actions>
+        </event-block>
+        <event-block sid="4224800268747736">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="645745411544052" type="Personagem">
+                    <param id="0" name="Object">Mosquitos_4</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-11" name="Subtract from" sid="8263418926720434" type="System">
+                    <param id="0" name="Variable">Vida</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+                <action id="11" name="Set collisions enabled" sid="4461437000502434" type="Personagem">
+                    <param id="0" name="Collisions">1</param>
+                </action>
+                <action behavior="Flash" id="0" name="Flash" sid="9884896573203836" type="Personagem">
+                    <param id="0" name="&apos;On&apos; time">0.1</param>
+                    <param id="1" name="&apos;Off&apos; time">0.1</param>
+                    <param id="2" name="Duration">1.0</param>
+                </action>
+                <action behavior="Flash" id="0" name="Flash" sid="9907021368507289" type="Zid">
+                    <param id="0" name="&apos;On&apos; time">0.1</param>
+                    <param id="1" name="&apos;Off&apos; time">0.1</param>
+                    <param id="2" name="Duration">1.0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="8857842814124016">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="4767777106394438" type="Personagem">
+                    <param id="0" name="Object">Sprite9</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Destroy" sid="4716828082807059" type="Sprite9" />
+            </actions>
+        </event-block>
+        <event-block sid="7005044190536984">
+            <conditions />
+            <actions />
+        </event-block>
+        <event-block sid="40714872525515">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="8844656159062969" type="System" />
+            </conditions>
+            <actions>
+                <action id="-9" name="Set value" sid="9388617837899512" type="System">
+                    <param id="0" name="Variable">PONTOS</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+                <action id="-9" name="Set value" sid="6520156894959722" type="System">
+                    <param id="0" name="Variable">Vida</param>
+                    <param id="1" name="Value">3</param>
+                </action>
+                <action id="-4" name="Set layer visible" sid="808050162732002" type="System">
+                    <param id="0" name="Layer">&quot;pause&quot;</param>
+                    <param id="1" name="Visibility">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="7646270589579304">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="1850943953627717" type="Poder">
+                    <param id="0" name="Object">teste_colisão</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Destroy" sid="7284619326661888" type="Poder" />
+            </actions>
+        </event-block>
+        <event-block sid="4324315572568944">
+            <conditions>
+                <condition id="-14" name="Compare variable" sid="5243105828880678" type="System">
+                    <param id="0" name="Variable">Vida</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-2" name="Go to layout" sid="5228750087319456" type="System">
+                    <param id="0" name="Layout">terceiraFase</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="3770246951189199">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="1443625657777954" type="Poder">
+                    <param id="0" name="Object">Mosquitos_2</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-11" name="Subtract from" sid="16315922691259" type="System">
+                    <param id="0" name="Variable">Vida_mosquitos</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+                <action id="0" name="Spawn another object" sid="7006980818727788" type="Mosquitos_2">
+                    <param id="0" name="Object">esplode</param>
+                    <param id="1" name="Layer">2</param>
+                    <param id="2" name="Image point">0</param>
+                </action>
+                <action id="-16" name="Wait" sid="9837403461201805" type="System">
+                    <param id="0" name="Seconds">1.5</param>
+                </action>
+                <action id="-9" name="Destroy" sid="1175980216416741" type="esplode" />
+                <action behavior="Flash" id="0" name="Flash" sid="197712434183877" type="Mosquitos_2">
+                    <param id="0" name="&apos;On&apos; time">1.0</param>
+                    <param id="1" name="&apos;Off&apos; time">1.0</param>
+                    <param id="2" name="Duration">2.0</param>
+                </action>
+                <action id="3" name="Start" sid="784023726840698" type="esplode">
+                    <param id="0" name="From">1</param>
+                </action>
+                <action id="-9" name="Destroy" sid="118823247158520" type="Mosquitos_2" />
+            </actions>
+        </event-block>
+        <event-block sid="515106477539439">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="730745752491823" type="Poder">
+                    <param id="0" name="Object">Mosquitos_4</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-11" name="Subtract from" sid="800376395878359" type="System">
+                    <param id="0" name="Variable">Vida_mosquitos</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+                <action behavior="Flash" id="0" name="Flash" sid="979195468093534" type="Mosquitos_4">
+                    <param id="0" name="&apos;On&apos; time">1.0</param>
+                    <param id="1" name="&apos;Off&apos; time">0.1</param>
+                    <param id="2" name="Duration">1.0</param>
+                </action>
+                <action id="0" name="Spawn another object" sid="325572060803426" type="Mosquitos_4">
+                    <param id="0" name="Object">esplode</param>
+                    <param id="1" name="Layer">2</param>
+                    <param id="2" name="Image point">0</param>
+                </action>
+                <action id="-16" name="Wait" sid="947847782705136" type="System">
+                    <param id="0" name="Seconds">1.5</param>
+                </action>
+                <action id="-9" name="Destroy" sid="612713134285472" type="esplode" />
+                <action id="3" name="Start" sid="514687058789292" type="esplode">
+                    <param id="0" name="From">1</param>
+                </action>
+                <action id="-9" name="Destroy" sid="187516377920733" type="Mosquitos_4" />
+            </actions>
+        </event-block>
+        <event-block sid="713271973977864">
+            <conditions>
+                <condition id="-14" name="Compare variable" sid="524352760667391" type="System">
+                    <param id="0" name="Variable">Vida_mosquitos</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="3" name="Start" sid="964068736262987" type="esplode">
+                    <param id="0" name="From">1</param>
+                </action>
+                <action id="-9" name="Destroy" sid="258793135185478" type="Mosquitos_3" />
+            </actions>
+        </event-block>
+        <event-block sid="319995282826415">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="454903918906240" type="Poder">
+                    <param id="0" name="Object">Mosquito_3</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-11" name="Subtract from" sid="485777104364321" type="System">
+                    <param id="0" name="Variable">Vida_mosquitos</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+                <action behavior="Flash" id="0" name="Flash" sid="874170450613778" type="Mosquito_3">
+                    <param id="0" name="&apos;On&apos; time">1.0</param>
+                    <param id="1" name="&apos;Off&apos; time">0.1</param>
+                    <param id="2" name="Duration">1.0</param>
+                </action>
+                <action id="0" name="Spawn another object" sid="296538567322574" type="Mosquitos_3">
+                    <param id="0" name="Object">esplode</param>
+                    <param id="1" name="Layer">2</param>
+                    <param id="2" name="Image point">0</param>
+                </action>
+                <action id="-16" name="Wait" sid="275302774672154" type="System">
+                    <param id="0" name="Seconds">1.5</param>
+                </action>
+                <action id="-9" name="Destroy" sid="888987908605509" type="esplode" />
+                <action id="-9" name="Destroy" sid="880815923824922" type="Mosquito_3" />
+            </actions>
+        </event-block>
+        <event-block sid="799097765514243">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="879345328990641" type="Poder">
+                    <param id="0" name="Object">Mosquitos_4</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-11" name="Subtract from" sid="923085282909562" type="System">
+                    <param id="0" name="Variable">Vida_mosquitos</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+                <action behavior="Flash" id="0" name="Flash" sid="553423700736597" type="Mosquitos_4">
+                    <param id="0" name="&apos;On&apos; time">1.0</param>
+                    <param id="1" name="&apos;Off&apos; time">0.1</param>
+                    <param id="2" name="Duration">1.0</param>
+                </action>
+                <action id="0" name="Spawn another object" sid="856081934472523" type="Mosquitos_4">
+                    <param id="0" name="Object">esplode</param>
+                    <param id="1" name="Layer">2</param>
+                    <param id="2" name="Image point">0</param>
+                </action>
+                <action id="-16" name="Wait" sid="692486146271213" type="System">
+                    <param id="0" name="Seconds">1.5</param>
+                </action>
+                <action id="-9" name="Destroy" sid="111386812909031" type="esplode" />
+                <action id="3" name="Start" sid="981378536867724" type="esplode">
+                    <param id="0" name="From">1</param>
+                </action>
+                <action id="-9" name="Destroy" sid="468440650896997" type="Mosquitos_4" />
+            </actions>
+        </event-block>
+        <event-block sid="688069830635138">
+            <conditions />
+            <actions />
+        </event-block>
+        <event-block sid="591061213452863">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="6788081037877844" type="Personagem">
+                    <param id="0" name="Object">Final_cair</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-43" name="Go to next/previous layout" sid="3657749931325829" type="System">
+                    <param id="0" name="Which">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="9923386731041794">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="6049045357067443" type="Poder">
+                    <param id="0" name="Object">Sprite11</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Destroy" sid="2893315617391711" type="Sprite11" />
+            </actions>
+        </event-block>
+        <event-block sid="3223145772157971">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="8167954621554152" type="Poder">
+                    <param id="0" name="Object">Sprite43</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Destroy" sid="3631471002447941" type="Sprite43" />
+            </actions>
+        </event-block>
+        <event-block sid="2441710534131408">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="1259170406355493" type="Personagem">
+                    <param id="0" name="Object">foco_peneu_1</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Destroy" sid="3006500148740502" type="foco_peneu_1" />
+            </actions>
+        </event-block>
+        <event-block sid="9061450422047356">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="874901646496256" type="Personagem">
+                    <param id="0" name="Object">Foco_garrafa_1</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Destroy" sid="7864398646406639" type="Foco_garrafa_1" />
+            </actions>
+        </event-block>
+        <event-block sid="1911174712363414">
+            <conditions>
+                <condition id="-6" name="Every X seconds" sid="7799716707111618" type="System">
+                    <param id="0" name="Interval (seconds)">6.0</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="0" name="Spawn another object" sid="1466218539190763" type="Mosquito_3">
+                    <param id="0" name="Object">Mosquit_arma</param>
+                    <param id="1" name="Layer">1</param>
+                    <param id="2" name="Image point">0</param>
+                </action>
+                <action id="-22" name="Set angle toward position" sid="5757272480872785" type="Mosquit_arma">
+                    <param id="0" name="X">Personagem.X</param>
+                    <param id="1" name="Y">Personagem.Y</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="256519487274026">
+            <conditions>
+                <condition id="0" name="On key pressed" sid="3760385434942585" type="Keyboard">
+                    <param id="0" name="Key">39 (Right arrow)</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="7" name="Set mirrored" sid="279848685304401" type="Zid">
+                    <param id="0" name="State">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="7576629708390633">
+            <conditions>
+                <condition id="0" name="On key pressed" sid="7746002179850095" type="Keyboard">
+                    <param id="0" name="Key">37 (Left arrow)</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="7" name="Set mirrored" sid="4344912650385802" type="Zid">
+                    <param id="0" name="State">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="5932021455451504">
+            <conditions />
+            <actions />
+        </event-block>
+        <event-block sid="6863481630724811">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="114437902899219" type="Poder">
+                    <param id="0" name="Object">Mosquit_arma</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action behavior="Flash" id="0" name="Flash" sid="949310976678881" type="Mosquit_arma">
+                    <param id="0" name="&apos;On&apos; time">1.0</param>
+                    <param id="1" name="&apos;Off&apos; time">1.0</param>
+                    <param id="2" name="Duration">2.0</param>
+                </action>
+                <action id="3" name="Start" sid="7420184554485459" type="esplode">
+                    <param id="0" name="From">1</param>
+                </action>
+                <action id="-9" name="Destroy" sid="837216075321341" type="Mosquit_arma" />
+            </actions>
+        </event-block>
+        <event-block sid="6773185236745725">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="6956959236093593" type="Personagem">
+                    <param id="0" name="Object">Mosquit_arma</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-11" name="Subtract from" sid="6902015292908076" type="System">
+                    <param id="0" name="Variable">Vida</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="203464624114051">
+            <conditions>
+                <condition behavior="Platform" id="8" name="On moved" sid="626273958185221" type="Personagem" />
+            </conditions>
+            <actions>
+                <action id="4" name="Set animation" sid="272404971544765" type="Zid">
+                    <param id="0" name="Animation">&quot;caminhando&quot;</param>
+                    <param id="1" name="From">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="629329997001430">
+            <conditions>
+                <condition behavior="Platform" id="7" name="On stopped" sid="475102450538536" type="Personagem" />
+            </conditions>
+            <actions>
+                <action id="4" name="Set animation" sid="771204205589452" type="Zid">
+                    <param id="0" name="Animation">&quot;parado&quot;</param>
+                    <param id="1" name="From">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="345274526632842">
+            <conditions>
+                <condition id="3" name="On touched object" sid="473205535461495" type="Touch">
+                    <param id="0" name="Object">Sprite146</param>
+                </condition>
+                <condition id="-14" name="Compare variable" sid="820647825544397" type="System">
+                    <param id="0" name="Variable">pause</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="3" name="Set volume" sid="873164027316176" type="Audio">
+                    <param id="0" name="Tag">&quot;abertura&quot;</param>
+                    <param id="1" name="dB">-50</param>
+                </action>
+                <action id="-9" name="Set value" sid="482793617045491" type="System">
+                    <param id="0" name="Variable">pause</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+                <action id="-13" name="Set time scale" sid="708648426055472" type="System">
+                    <param id="0" name="Time scale">0</param>
+                </action>
+                <action id="-4" name="Set layer visible" sid="890558495817979" type="System">
+                    <param id="0" name="Layer">&quot;pause&quot;</param>
+                    <param id="1" name="Visibility">1</param>
+                </action>
+                <action id="-16" name="Wait" sid="893705910664407" type="System">
+                    <param id="0" name="Seconds">0.100</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="399213285846831">
+            <conditions>
+                <condition id="3" name="On touched object" sid="607447355146516" type="Touch">
+                    <param id="0" name="Object">Sprite145</param>
+                </condition>
+                <condition id="-14" name="Compare variable" sid="802659234854511" type="System">
+                    <param id="0" name="Variable">pause</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">1</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Set value" sid="812109031254262" type="System">
+                    <param id="0" name="Variable">pause</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+                <action id="-13" name="Set time scale" sid="609222534799380" type="System">
+                    <param id="0" name="Time scale">1</param>
+                </action>
+                <action id="-4" name="Set layer visible" sid="779596353997436" type="System">
+                    <param id="0" name="Layer">&quot;pause&quot;</param>
+                    <param id="1" name="Visibility">0</param>
+                </action>
+                <action id="-16" name="Wait" sid="340288436468066" type="System">
+                    <param id="0" name="Seconds">0.100</param>
+                </action>
+                <action id="3" name="Set volume" sid="287607270736139" type="Audio">
+                    <param id="0" name="Tag">&quot;abertura&quot;</param>
+                    <param id="1" name="dB">0</param>
+                </action>
+            </actions>
+        </event-block>
+    </events>
+</c2eventsheet>
